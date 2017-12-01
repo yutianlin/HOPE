@@ -1,0 +1,129 @@
+a:link    {color:#000;}  /* unvisited link  */
+a:visited {color:#000;}  /* visited link    */
+a:hover   {color:#000;}  /* mouse over link */
+a:active  {color:#000;}  /* selected link   */
+
+.menu-bar{
+  color: white;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  left:0;
+  right:0;
+  overflow: hidden;
+  background-color: #333;
+  position: fixed;
+  z-index: 99999;
+}
+
+.menu-bar-item-home{
+  float: left;
+}
+.menu-bar-item-rest{
+  float: right;
+}
+
+.menu-bar-item .menu-bar-button{
+  display: block;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.menu-bar-item .menu-bar-button:hover {
+  background-color: #111;
+}
+
+img.header-image {
+  width: 100%;
+  height: 100%;
+}
+
+img.darken-image {
+  -webkit-filter: brightness(40%);
+  filter:brightness(40%);
+}
+
+div.header-wrapper {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.title-name {
+  font-size: 60px;
+  padding-bottom: 10px;
+  color: white;
+}
+
+.darken-text {
+  -webkit-filter: brightness(90%);
+  filter:brightness(90%);
+}
+
+.header-link{
+  font-size: 20px;
+}
+
+.header-link:hover{
+  text-decoration: underline;
+}
+
+.header-text{
+  text-align: center;
+  position: absolute;
+  width: auto;
+}
+
+.fa {
+  display: inline-block;
+  padding: 20px;
+  font-size: 30px;
+  width: 55px;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 50%;
+  /*color: white;*/
+}
+
+/* Add a hover effect if you want */
+.fa:hover {
+  -webkit-filter: brightness(80%);
+  filter:brightness(80%);
+}
+
+/* Set a specific color for each brand */
+
+.fa-facebook {
+  background: #3B5998;
+}
+
+.fa-twitter {
+  background: #55ACEE
+}
+
+.fa-youtube {
+  background: #bb0000;
+}
+
+.fa-instagram {
+  background: #125688;
+}
+
+.videowrapper{
+  align:center;
+}
+
+#goal {
+  text-align: center;
+}
+
+.fillhorizon {
+  width: -webkit-fill-available;
+}
+
+.textpaddingLR {
+  padding-left: 30px;
+  padding-right: 30px;
+}
