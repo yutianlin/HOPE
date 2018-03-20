@@ -157,11 +157,15 @@ button {
 }
 
 .btn:hover, .btn:focus {
-  background-color: darkgrey;
+  background-color: lightgrey;
 }
 
 .btn > * {
   position: relative;
+}
+
+.btn {
+  border-color: #007bff !important;
 }
 
 .btn span {
