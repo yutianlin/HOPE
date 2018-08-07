@@ -19,8 +19,44 @@
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+
+    <script>
+
+    function loadSponsors() {
+
+      var info = new Array();
+      info[0] = new Array("https://www.ubc.ca/", "img/ubc.png", "University of<br>British Columbia")
+      info[1] = new Array("http://go.vsb.bc.ca/schools/magee/Pages/default.aspx", "img/magee.png", "Magee<br>Secondary School");
+      info[2] = new Array("http://go.vsb.bc.ca/schools/killarney/Pages/default.aspx", "img/Killarney.png", "Killarney<br>Secondary School");
+      info[3] = new Array("http://go.vsb.bc.ca/schools/byng/Pages/default.aspx", "img/lordByng.PNG", "Lord Byng<br>Secondary School");
+      info[4] = new Array("http://www.covenanthousebc.org/", "img/covenant.png", "Covenant House<br>Vancouver");
+      info[5] = new Array("http://www.soroptimistvancouver.org/", "img/soroptimist.png", "Soroptimist<br>International Vancouver");
+      info[6] = new Array("http://www.terrabreads.com/", "img/terra.png", "Terra<br>Breads");
+
+      for (i = 1; i < info.length; i++) {
+        var clone = $("#sponsors_item_0").clone();
+        clone.attr("id", "sponsors_item_" + (i));
+        clone.find("#sponsors_href_0").attr("id", "sponsors_href_" + (i));
+        clone.find("#sponsors_img_0").attr("id", "sponsors_img_" + (i));
+        clone.find("#sponsors_title_0").attr("id", "sponsors_title_" + (i));
+        $("#sponsors").append(clone);
+      }
+
+      for (var i in info) {
+        document.getElementById("sponsors_href_" + (i)).href=info[i][0];
+        document.getElementById("sponsors_img_" + (i)).src=info[i][1];
+        document.getElementById("sponsors_title_" + (i)).innerHTML=info[i][2];
+      }
+
+    }
+
+    </script>
+
+
+
+
   </head>
-  <body>
+  <body onload="loadSponsors()">
 
     <!--MenuBar-->
     <ul class="menu-bar">
@@ -98,11 +134,12 @@
       </div>
     </div>
 
-    <div class="video-container">
+    <!-- Temprarily taken out, put in afterwards -->
+    <!-- <div class="video-container">
       <iframe width="80%" max-width:"640px"
       src="https://www.youtube.com/embed/j6Yofujw1CU?autoplay=1" frameborder="0"
       allow="autoplay; encrypted-media" allowfullscreen></iframe>
-    </div>
+    </div> -->
 
     <a name="projects"></a>
     <div class="subsection">
@@ -271,48 +308,14 @@
     <div class="subsection">
       <h2 class="subtitle">Our Sponsors</h2>
       <div class="container">
-        <div class="row justify-content-center">
-          <div class="column card">
-            <a href="https://www.ubc.ca/" target="_blank">
-              <img src="img/ubc.png">
+        <div class="row justify-content-center" id="sponsors">
+
+          <!-- Cloned 6 times onload -->
+          <div class="column card" id="sponsors_item_0">
+            <a id="sponsors_href_0" target="_blank">
+              <img id="sponsors_img_0">
             </a>
-            <h4 class="card-title">University of<br>British Columbia</h4>
-          </div>
-          <div class="column card">
-            <a href="http://go.vsb.bc.ca/schools/magee/Pages/default.aspx">
-              <img src="img/magee.png">
-            </a>
-            <h4 class="card-title">Magee<br>Secondary School</h4>
-          </div>
-          <div class="column card">
-            <a href="http://go.vsb.bc.ca/schools/killarney/Pages/default.aspx">
-              <img src="img/Killarney.png">
-            </a>
-            <h4 class="card-title">Killarney<br>Secondary School</h4>
-          </div>
-          <div class="column card">
-            <a href="http://go.vsb.bc.ca/schools/byng/Pages/default.aspx">
-              <img src="img/lordByng.PNG">
-            </a>
-            <h4 class="card-title">Lord Byng<br>Secondary School</h4>
-          </div>
-          <div class="column card">
-            <a href="http://www.covenanthousebc.org/">
-              <img src="img/covenant.png">
-            </a>
-            <h4 class="card-title">Covenant House<br>Vancouver</h4>
-          </div>
-          <div class="column card">
-            <a href="http://www.soroptimistvancouver.org/">
-              <img src="img/soroptimist.png">
-            </a>
-            <h4 class="card-title">Soroptimist<br>International Vancouver</h4>
-          </div>
-          <div class="column card">
-            <a href="http://www.terrabreads.com/">
-              <img src="img/terra.png">
-            </a>
-            <h4 class="card-title">Terra<br>Breads</h4>
+            <h4 id="sponsors_title_0" class="card-title"></h4>
           </div>
         </div>
       </div>
