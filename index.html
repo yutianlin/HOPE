@@ -24,6 +24,7 @@
 
     function onLoad() {
       loadProjects();
+      loadTeam();
       loadSponsors();
     }
 
@@ -32,8 +33,11 @@
         var clone = $("#"+itemID+"0").clone();
         clone.attr("id", itemID + i);
         clone.find("#"+hrefID+"0").attr("id", hrefID + i);
-        clone.find("#"+imgID + "0").attr("id", imgID + i);
-        clone.find("#"+titleID + "0").attr("id", titleID + i);
+        clone.find("#"+imgID +"0").attr("id", imgID + i);
+        clone.find("#"+titleID +"0").attr("id", titleID + i);
+        if (descriptionID != undefined) {
+          clone.find("#"+descriptionID+"0").attr("id", descriptionID + i);
+        }
         $("#" + parentID).append(clone);
       }
 
@@ -41,6 +45,9 @@
         document.getElementById(hrefID + i).href=info[i][0];
         document.getElementById(imgID + i).src=info[i][1];
         document.getElementById(titleID + i).innerHTML=info[i][2];
+        if (descriptionID != undefined) {
+          document.getElementById(descriptionID + i).innerHTML=info[i][3];
+        }
       }
     }
 
@@ -58,6 +65,38 @@
       info[9] = new Array("projects.html#media-and-the-mind","img/index/media-and-the-mind.jpg","Media and the Mind");
 
       loadCard(info, "projects", "project_item_", "project_href_", "project_img_", "project_title_");
+    }
+
+    function loadTeam() {
+      var info = new Array();
+      info[0] = new Array("our-team.html","img/members/vivian-tsang.jpg","Vivian Tsang<br>Director",
+      "As opposed to a lot of charities, HOPE works through mutual aid and"+
+      "long-term partnerships but also leave room for members to initiate"+
+      "projects based on what they see to be issues rising in their communities."+
+      "This is what I love about what we do.");
+
+      info[1] = new Array("our-team.html#administration","img/members/harleen.jpg","Harleen Cheema<br>Administration",
+      "I joined HOPE because I have always been passionate about helping the"+
+      "marginalized groups in the society. HOPE has had a very positive impact"+
+      "on my learning experience here at UBC.");
+
+      info[2] = new Array("our-team.html#corporate-relations", "img/members/vanya.jpg", "Vanya Singh<br>Corporate Relations",
+      "I joined HOPE because I wanted to find a group of like-minded students" +
+      "who wanted to reach out and help others. This club has allowed me to" +
+      "voice my own ideas and also work with others to plan and expand their" +
+      "own projects.");
+
+      info[3] = new Array("our-team.html#marketing-communication", "img/members/jenny.jpg", "Jenny Luo<br>Marketing",
+      "I joined HOPE because HOPE gives me the chance to support the" +
+      "marginalized and underpriviledged individuals in our community, while" +
+      "working with a passionate, dedicated team.");
+
+      info[4] = new Array("our-team.html#mentorship", "img/members/gurkamel.jpg", "Gurkamel Gill<br>Mentorship",
+      "My passion for helping to empower youth spurred my decision to join" +
+      "HOPE. The mentorship program between highschool and university students" +
+      "is such a rewarding experience and something I wish I had during my transition.");
+
+      loadCard(info, "team", "team_item_", "team_href_", "team_img_", "team_title_", "team_description_");
     }
 
     function loadSponsors() {
@@ -160,19 +199,18 @@
       </div>
     </div>
 
-    <!-- Temprarily taken out, put in afterwards -->
-    <!-- <div class="video-container">
+    <div class="video-container">
       <iframe width="80%" max-width:"640px"
       src="https://www.youtube.com/embed/j6Yofujw1CU?autoplay=1" frameborder="0"
       allow="autoplay; encrypted-media" allowfullscreen></iframe>
-    </div> -->
+    </div>
 
     <a name="projects"></a>
     <div class="subsection">
       <h2 class="subtitle">Our Projects</h2>
       <div class="container">
         <div id="projects" class="row justify-content-center">
-
+          <!-- 10 Total -->
           <div id="project_item_0" class="column card">
             <a id="project_href_0">
               <img id="project_img_0">
@@ -187,71 +225,15 @@
     <div class="subsection">
       <h2 class="subtitle">Our Team</h2>
       <div class="container">
-        <div class="row justify-content-center">
-
-          <!-- Vivian Tsang Director -->
-          <div class="column card team">
-            <a href="our-team.html">
-              <img src="img/members/vivian-tsang.jpg" height="300" width="200">
-              <div class="text-overlay">"As opposed to a lot of charities,
-                HOPE works through mutual aid and long-term partnerships but
-                also leave room for members to initiate projects based on what
-                they see to be issues rising in their communities. This is
-                what I love about what we do."</div>
+        <div id="team" class="row justify-content-center">
+          <!-- 5 Total -->
+          <div id="team_item_0" class="column card team">
+            <a id="team_href_0">
+              <img id="team_img_0" height="300" width="200">
+              <div id="team_description_0" class="text-overlay"></div>
             </a>
-            <h4 class="card-title">Vivian Tsang<br>Director</h4>
+            <h4 id="team_title_0" class="card-title"></h4>
           </div>
-
-          <!-- Harleen Cheema Administrative -->
-          <div class="column card team">
-            <a href="our-team.html#administration">
-              <img src="img/members/harleen.jpg" height="300" width="200">
-              <div class="text-overlay">"I joined HOPE because I have always
-                been passionate about helping the marginalized groups in the
-                society. HOPE has had a very
-                positive impact on my learning experience here at UBC."</div>
-            </a>
-            <h4 class="card-title">Harleen Cheema<br>Administration</h4>
-          </div>
-
-          <!-- Vanya Singh Corporate Relations -->
-          <div class="column card team">
-            <a href="our-team.html#corporate-relations">
-              <img src="img/members/vanya.jpg" height="300" width="200">
-              <div class="text-overlay">"I joined HOPE because I wanted to
-                find a group of like-minded students who wanted to reach out
-                 and help others. This club has allowed me to voice my own
-                 ideas and also work with others to plan and expand their
-                 own projects. "</div>
-            </a>
-            <h4 class="card-title">Vanya Singh<br>Corporate Relations</h4>
-          </div>
-
-          <!-- Jenny Luo Marketing -->
-          <div class="column card team">
-            <a href="our-team.html#marketing-communication">
-              <img src="img/members/jenny.jpg" height="300" width="200">
-              <div class="text-overlay">"I joined HOPE because HOPE gives me
-                the chance to support the marginalized and underpriviledged
-                individuals in our community, while working with a
-                passionate, dedicated team. "</div>
-            </a>
-            <h4 class="card-title">Jenny Luo<br>Marketing</h4>
-          </div>
-
-          <!-- Gurkamel Gill Mentorship Commitee -->
-          <div class="column card team">
-            <a href="our-team.html#mentorship">
-              <img src="img/members/gurkamel.jpg" height="300" width="200">
-              <div class="text-overlay">"My passion for helping to empower
-                youth spurred my decision to join HOPE. The mentorship
-                program between highschool and university students is
-                such a rewarding experience and something I wish I had
-                during my transition. "</div>
-            </a>
-            <h4 class="card-title">Gurkamel Gill<br>Mentorship</h4>
-          </div>
-
         </div>
       </div>
     </div>
@@ -261,8 +243,7 @@
       <h2 class="subtitle">Our Sponsors</h2>
       <div class="container">
         <div class="row justify-content-center" id="sponsors">
-
-          <!-- Cloned 6 times onload -->
+          <!-- 7 Total -->
           <div class="column card" id="sponsor_item_0">
             <a id="sponsor_href_0" target="_blank">
               <img id="sponsor_img_0">
@@ -286,12 +267,6 @@
         </div>
       </div>
     </div>
-
-
-
-
-
-
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
