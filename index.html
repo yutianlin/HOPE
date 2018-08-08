@@ -21,92 +21,11 @@
     <![endif]-->
 
     <script>
-    //
-    // function onLoad() {
-    //   loadSponsors()
-    // }
 
-
-
-    // <!-- First -->
-    // <div class="column card">
-    //   <a href="projects.html#warmth-of-winter">
-    //     <img src="img\index\warmth-of-winter.jpg">
-    //   </a>
-    //   <h4 class="card-title">Warmth of Winter</h4>
-    // </div>
-    //
-    // <!-- Second -->
-    // <div class="column card">
-    //   <a href="projects.html#hope-for-success">
-    //     <img src="img\index\hope-for-success.png">
-    //   </a>
-    //   <h4 class="card-title">HOPE for Success</h4>
-    // </div>
-    //
-    // <!-- Third -->
-    // <div class="column card">
-    //   <a href="projects.html#dream-it-be-it">
-    //     <img src="img/index/dream-it-be-it.jpg">
-    //   </a>
-    //   <h4 class="card-title">Dream it Be it</h4>
-    // </div>
-    //
-    // <!-- Fourth -->
-    // <div class="column card">
-    //   <a href="projects.html#hope-for-homes">
-    //     <img src="img/index/hope-for-homes.jpg">
-    //   </a>
-    //   <h4 class="card-title">Hope for Homes</h4>
-    // </div>
-    //
-    // <!-- Fifth -->
-    // <div class="column card">
-    //   <a href="projects.html#life-skills-outreach">
-    //     <img src="img/index/life-skills-outreach.jpg">
-    //   </a>
-    //   <h4 class="card-title">Life Skills Outreach</h4>
-    // </div>
-    //
-    // <!-- Sixth -->
-    // <div class="column card">
-    //   <a href="projects.html#womens-career-conference">
-    //     <img src="img/index/womens-career-conference.jpg">
-    //   </a>
-    //   <h4 class="card-title">Women's Career Conference</h4>
-    // </div>
-    //
-    // <!-- Seventh -->
-    // <div class="column card">
-    //   <a href="projects.html#street-store">
-    //     <img src="img/index/street-store.png">
-    //   </a>
-    //   <h4 class="card-title">Street Store</h4>
-    // </div>
-    //
-    // <!-- Eighth -->
-    // <div class="column card">
-    //   <a href="projects.html#summer-workshops">
-    //     <img src="img/index/summer-workshops.jpg">
-    //   </a>
-    //   <h4 class="card-title">Summer Workshops</h4>
-    // </div>
-    //
-    // <!-- Ninth -->
-    // <div class="column card">
-    //   <a href="projects.html#free-the-children">
-    //     <img src="img/index/free-the-children.jpg">
-    //   </a>
-    //   <h4 class="card-title">Free the Children</h4>
-    // </div>
-    //
-    // <!-- Tenth -->
-    // <div class="column card">
-    //   <a href="projects.html#media-and-the-mind">
-    //     <img src="img/index/media-and-the-mind.jpg">
-    //   </a>
-    //   <h4 class="card-title">Media and the Mind</h4>
-    // </div>
+    function onLoad() {
+      loadProjects();
+      loadSponsors();
+    }
 
     function loadCard(info, parentID, itemID, hrefID, imgID, titleID, descriptionID) {
       for (i = 1; i < info.length; i++) {
@@ -125,7 +44,21 @@
       }
     }
 
+    function loadProjects() {
+      var info = new Array();
+      info[0] = new Array("projects.html#warmth-of-winter","img/index/warmth-of-winter.jpg","Warmth of Winter");
+      info[1] = new Array("projects.html#hope-for-success","img/index/hope-for-success.png","HOPE for Success");
+      info[2] = new Array("projects.html#dream-it-be-it","img/index/dream-it-be-it.jpg","Dream it Be it");
+      info[3] = new Array("projects.html#hope-for-homes","img/index/hope-for-homes.jpg","Hope for Homes");
+      info[4] = new Array("projects.html#life-skills-outreach","img/index/life-skills-outreach.jpg","Life Skills Outreach");
+      info[5] = new Array("projects.html#womens-career-conference","img/index/womens-career-conference.jpg","Women's Career Conference");
+      info[6] = new Array("projects.html#street-store","img/index/street-store.png","Street Store");
+      info[7] = new Array("projects.html#summer-workshops","img/index/summer-workshops.jpg","Summer Workshops");
+      info[8] = new Array("projects.html#free-the-children","img/index/free-the-children.jpg","Free the Children");
+      info[9] = new Array("projects.html#media-and-the-mind","img/index/media-and-the-mind.jpg","Media and the Mind");
 
+      loadCard(info, "projects", "project_item_", "project_href_", "project_img_", "project_title_");
+    }
 
     function loadSponsors() {
 
@@ -139,7 +72,7 @@
       info[6] = new Array("http://www.terrabreads.com/", "img/terra.png", "Terra<br>Breads");
 
 
-      loadCard(info, "sponsors", "sponsors_item_", "sponsors_href_", "sponsors_img_", "sponsors_title_", "descrip");
+      loadCard(info, "sponsors", "sponsor_item_", "sponsor_href_", "sponsor_img_", "sponsor_title_");
     }
 
 
@@ -149,7 +82,7 @@
 
 
   </head>
-  <body onload="loadSponsors()">
+  <body onload="onLoad()">
 
     <!--MenuBar-->
     <ul class="menu-bar">
@@ -240,87 +173,12 @@
       <div class="container">
         <div id="projects" class="row justify-content-center">
 
-
-          <!-- First -->
-          <!-- <div class="column card">
-            <a href="projects.html#warmth-of-winter">
-              <img src="img\index\warmth-of-winter.jpg">
+          <div id="project_item_0" class="column card">
+            <a id="project_href_0">
+              <img id="project_img_0">
             </a>
-            <h4 class="card-title">Warmth of Winter</h4>
-          </div> -->
-
-          <!-- Second -->
-          <!-- <div class="column card">
-            <a href="projects.html#hope-for-success">
-              <img src="img\index\hope-for-success.png">
-            </a>
-            <h4 class="card-title">HOPE for Success</h4>
-          </div> -->
-
-          <!-- Third -->
-          <!-- <div class="column card">
-            <a href="projects.html#dream-it-be-it">
-              <img src="img/index/dream-it-be-it.jpg">
-            </a>
-            <h4 class="card-title">Dream it Be it</h4>
-          </div> -->
-
-          <!-- Fourth -->
-          <!-- <div class="column card">
-            <a href="projects.html#hope-for-homes">
-              <img src="img/index/hope-for-homes.jpg">
-            </a>
-            <h4 class="card-title">Hope for Homes</h4>
-          </div> -->
-
-          <!-- Fifth -->
-          <!-- <div class="column card">
-            <a href="projects.html#life-skills-outreach">
-              <img src="img/index/life-skills-outreach.jpg">
-            </a>
-            <h4 class="card-title">Life Skills Outreach</h4>
-          </div> -->
-
-          <!-- Sixth -->
-          <!-- <div class="column card">
-            <a href="projects.html#womens-career-conference">
-              <img src="img/index/womens-career-conference.jpg">
-            </a>
-            <h4 class="card-title">Women's Career Conference</h4>
-          </div> -->
-
-          <!-- Seventh -->
-          <!-- <div class="column card">
-            <a href="projects.html#street-store">
-              <img src="img/index/street-store.png">
-            </a>
-            <h4 class="card-title">Street Store</h4>
-          </div> -->
-
-          <!-- Eighth -->
-          <!-- <div class="column card">
-            <a href="projects.html#summer-workshops">
-              <img src="img/index/summer-workshops.jpg">
-            </a>
-            <h4 class="card-title">Summer Workshops</h4>
-          </div> -->
-
-          <!-- Ninth -->
-          <!-- <div class="column card">
-            <a href="projects.html#free-the-children">
-              <img src="img/index/free-the-children.jpg">
-            </a>
-            <h4 class="card-title">Free the Children</h4>
-          </div> -->
-
-          <!-- Tenth -->
-          <!-- <div class="column card">
-            <a href="projects.html#media-and-the-mind">
-              <img src="img/index/media-and-the-mind.jpg">
-            </a>
-            <h4 class="card-title">Media and the Mind</h4>
-          </div> -->
-
+            <h4 id="project_title_0" class="card-title"></h4>
+          </div>
         </div>
       </div>
     </div>
@@ -405,11 +263,11 @@
         <div class="row justify-content-center" id="sponsors">
 
           <!-- Cloned 6 times onload -->
-          <div class="column card" id="sponsors_item_0">
-            <a id="sponsors_href_0" target="_blank">
-              <img id="sponsors_img_0">
+          <div class="column card" id="sponsor_item_0">
+            <a id="sponsor_href_0" target="_blank">
+              <img id="sponsor_img_0">
             </a>
-            <h4 id="sponsors_title_0" class="card-title"></h4>
+            <h4 id="sponsor_title_0" class="card-title"></h4>
           </div>
         </div>
       </div>
