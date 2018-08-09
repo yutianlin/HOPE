@@ -12,6 +12,8 @@
     <!-- <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> -->
     <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
     <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -23,10 +25,19 @@
     <script>
 
     function onLoad() {
+      navigationBar();
       loadProjects();
       loadTeam();
       loadSponsors();
     }
+
+
+    function navigationBar() {
+      $(function() {
+        $("#navigation_bar").load("nav.html");
+      });
+    }
+
 
     function loadCard(info, parentID, itemID, hrefID, imgID, titleID, descriptionID) {
       for (i = 1; i < info.length; i++) {
@@ -124,7 +135,7 @@
   <body onload="onLoad()">
 
     <!--MenuBar-->
-    <ul class="menu-bar">
+    <!-- <ul class="menu-bar">
 
       <li class="menu-bar-item menu-bar-item-rest">
         <a href="" class="menu-bar-button">Contact Us</a></li>
@@ -144,7 +155,13 @@
       <li class="menu-bar-item menu-bar-item-home">
         <a href="" class="menu-bar-button">Home</a></li>
 
-    </ul>
+    </ul> -->
+
+    <div class="container">
+      <header>
+        <div id="navigation_bar"></div>
+      </header>
+    </div>
 
     <!-- Banner -->
     <div class="header-wrapper">
@@ -199,11 +216,11 @@
       </div>
     </div>
 
-    <div class="video-container">
+    <!-- <div class="video-container">
       <iframe width="80%" max-width:"640px"
       src="https://www.youtube.com/embed/j6Yofujw1CU?autoplay=1" frameborder="0"
       allow="autoplay; encrypted-media" allowfullscreen></iframe>
-    </div>
+    </div> -->
 
     <a name="projects"></a>
     <div class="subsection">
