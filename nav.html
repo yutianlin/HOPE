@@ -1,24 +1,48 @@
+<!-- <ul class="menu-bar" id="my_menu_bar">
+
+  <li class="menu-bar-item menu-bar-item-rest">
+    <a id="menu_bar_sponsors" href="index.html#sponsors" class="menu-bar-button">Sponsors</a></li>
+
+  <li class="menu-bar-item menu-bar-item-rest">
+    <a id="menu_bar_our_team" href="index.html#team" class="menu-bar-button">Our Team</a></li>
+
+  <li class="menu-bar-item menu-bar-item-rest">
+    <a id="menu_bar_projects" href="index.html#projects" class="menu-bar-button">Projects</a></li>
+
+  <li class="menu-bar-item menu-bar-item-rest">
+    <a id="menu_bar_about_us" href="index.html#about-us" class="menu-bar-button">About Us</a></li>
+
+  <li class="menu-bar-item menu-bar-item-home">
+    <a id="menu_bar_home" class="active" href="index.html" class="menu-bar-button">Home</a></li>
+
+</ul> -->
+
+<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+
+<div class="topnav" id="myTopnav">
+  <a href="index.html" class="active">Home</a>
+  <!-- <div id="topnav_align_right"> -->
+  <a href="index.html#about_us">About Us</a>
+  <a href="index.html#projects">Projects</a>
+  <a href="index.html#team">Our Team</a>
+  <a href="index.html#sponsors">Sponsors</a>
+  <a href="index.html#contact_us">Contact Us</a>
+  <!-- </div> -->
+  <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+    <i class="fa fa-bars"></i>
+  </a>
+</div>
 
 
-<!--MenuBar-->
-    <ul class="menu-bar">
+<script>
 
-      <li class="menu-bar-item menu-bar-item-rest">
-        <a href="" class="menu-bar-button">Contact Us</a></li>
+  function myFunction() {
+      var x = document.getElementById("myTopnav");
+      if (x.className === "topnav") {
+          x.className += " responsive";
+      } else {
+          x.className = "topnav";
+      }
+  }
 
-      <li class="menu-bar-item menu-bar-item-rest">
-        <a href="#sponsors" class="menu-bar-button">Sponsors</a></li>
-
-      <li class="menu-bar-item menu-bar-item-rest">
-        <a href="#team" class="menu-bar-button">Our Team</a></li>
-
-      <li class="menu-bar-item menu-bar-item-rest">
-        <a href="#projects" class="menu-bar-button">Projects</a></li>
-
-      <li class="menu-bar-item menu-bar-item-rest">
-        <a href="#about-us" class="menu-bar-button">About Us</a></li>
-
-      <li class="menu-bar-item menu-bar-item-home">
-        <a href="" class="menu-bar-button">Home</a></li>
-
-    </ul>
+</script>
