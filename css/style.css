@@ -462,6 +462,17 @@ a.anchor{display: block; position: relative; top: -4rem; visibility: hidden;}
 .topnav {
   background-color: #031A46;
   overflow: hidden;
+  position: fixed !important; /* Make it stick/fixed */
+  top: 0; /* Stay on top */
+  width: 100%; /* Full width */
+  transition: top 0.3s; /* Transition effect when sliding down (and up) */
+}
+
+.topnav.responsive{
+  position: fixed; /* Make it stick/fixed */
+  top: 0; /* Stay on top */
+  width: 100%; /* Full width */
+  transition: top 0.3s; /* Transition effect when sliding down (and up) */
 }
 
 /* Style the links inside the navigation bar */

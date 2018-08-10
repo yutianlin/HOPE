@@ -6,44 +6,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>HOPE</title>
     <link href="css/style.css" type="text/css" rel="stylesheet" media="all">
-    <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> -->
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
     <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
 
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
+    <script>
+    function onLoad() {
+      navigationBar();
+    }
+
+    function navigationBar() {
+      $(function() {
+        $("#navigation_bar").load("nav.html");
+      });
+    }
+    </script>
+
   </head>
-  <body>
+  <body onload="onLoad()">
 
-    <!--MenuBar-->
-    <ul class="menu-bar">
-
-      <li class="menu-bar-item menu-bar-item-rest">
-        <a href="index.html" class="menu-bar-button">Contact Us</a></li>
-
-      <li class="menu-bar-item menu-bar-item-rest">
-        <a href="index.html#sponsors" class="menu-bar-button">Sponsors</a></li>
-
-      <li class="menu-bar-item menu-bar-item-rest">
-        <a href="index.html#team" class="menu-bar-button">Our Team</a></li>
-
-      <li class="menu-bar-item menu-bar-item-rest">
-        <a href="index.html#projects" class="menu-bar-button">Projects</a></li>
-
-      <li class="menu-bar-item menu-bar-item-rest">
-        <a href="index.html#about-us" class="menu-bar-button">About Us</a></li>
-
-      <li class="menu-bar-item menu-bar-item-home">
-        <a href="index.html" class="menu-bar-button">Home</a></li>
-
-    </ul>
+    <!-- Menu Bar -->
+    <header>
+      <div id="navigation_bar"></div>
+    </header>
 
     <div class="container extraUpperMargin">
 
